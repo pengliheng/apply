@@ -1,0 +1,108 @@
+/* 小屏幕（平板，大于等于 768px） */
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+body {
+  padding: 0px;
+  margin: 0px;
+}
+@media (min-width: 768px) {
+  body .context-container {
+    max-width: 1200px;
+    font-size: 15px;
+  }
+}
+body .context-container .context-inner {
+  padding: 20px 0 30px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  body .context-container .context-inner {
+    padding-top: 0;
+  }
+}
+body .context-container .context-inner .context-mod {
+  border-left: 1px solid #d8d8d8;
+}
+@media (max-width: 768px) {
+  body .context-container .context-inner .context-mod {
+    padding: 0px 0;
+  }
+}
+body .context-container .context-inner .context-mod a {
+  color: #908e8f;
+}
+body .context-container .context-inner .context-mod a:hover {
+  color: #4e4b4a;
+  text-decoration: none;
+}
+body .context-container .context-inner .context-mod a:focus {
+  font-weight: bold;
+}
+body .context-container .context-inner .first {
+  border: 0;
+}
+body .context-container .context-inner .active a {
+  font-weight: bold;
+  color: #4e4b4a;
+}
+body .context-container .line {
+  width: 100%;
+  height: 0;
+  border-top: 1px solid #d8d8d8;
+  display: inherit;
+}
+body .context-container .context-service {
+  padding: 20px 0 30px;
+  min-height: 1500px;
+}
+body .context-container .context-service div {
+  color: #817f80;
+}
+body .context-container .context-service div h4 {
+  margin-bottom: 0;
+}
+body .context-container .context-service div img {
+  width: 100%;
+  margin-top: 50px;
+}
+body .context-container .context-service div p {
+  text-align: left;
+  font-size: 16px;
+  margin: 10px 0;
+  line-height: 30px;
+}
+body .context-container .context-case {
+  padding: 20px 0 60px;
+}
+body .context-container .context-case div {
+  color: #817f80;
+}
+body .context-container .context-case div h4 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+body .context-container .context-case div img {
+  width: 100%;
+  margin-top: 10px;
+}
+body .context-container .context-case div p {
+  text-align: left;
+  font-size: 16px;
+  margin: 10px 0;
+  line-height: 30px;
+}
+body .context-container .context-container-page {
+  text-align: center;
+}
+body .context-container .context-container-page .pagination a,
+body .context-container .context-container-page .pagination span {
+  color: #a5a4a2;
+  font-weight: bold;
+  font-size: 1em;
+  margin: 0 6px;
+}
+body .context-container .context-container-page .pagination .active a {
+  background-color: #a5a4a2;
+  border-color: #a5a4a2;
+  color: white;
+}

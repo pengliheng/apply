@@ -1,0 +1,5 @@
+body,body header{padding:0;margin:0}
+body header .navbar{border:none}
+body header .navbar .img-container{background-color:#000}
+body header .navbar .img-container img{margin:0 auto;display:block;padding:20px 0 10px}
+body footer{padding:0;margin:0}

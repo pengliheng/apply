@@ -1,0 +1,23 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+body header {
+  padding: 0px;
+  margin: 0px;
+}
+body header .navbar {
+  border: none;
+}
+body header .navbar .img-container {
+  background-color: black;
+}
+body header .navbar .img-container img {
+  margin: 0 auto;
+  display: block;
+  padding: 20px 0 10px;
+}
+body footer {
+  padding: 0px;
+  margin: 0px;
+}

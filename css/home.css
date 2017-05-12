@@ -1,0 +1,188 @@
+/* 小屏幕（平板，大于等于 768px） */
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+body {
+  padding: 0px;
+  margin: 0px;
+}
+body header {
+  padding: 0px;
+  margin: 0px;
+}
+body header .navbar {
+  margin-bottom: 0px;
+  position: relative;
+  z-index: 2;
+  border: none;
+  border-radius: 0;
+}
+@media screen and (min-width: 764px) {
+  body header .navbar {
+    background-color: black;
+  }
+}
+@media screen and (max-width: 764px) {
+  body header .navbar {
+    background-color: white;
+  }
+}
+body header .navbar .img-container {
+  background-color: black;
+  border-bottom: 1px #212121 solid;
+}
+body header .navbar .img-container img {
+  margin: 0 auto;
+  display: block;
+  padding: 20px 0 10px;
+  max-width: 40%;
+}
+body header .navbar .nav-container {
+  max-width: 100%;
+  background-color: inherit;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  body header .navbar .nav-container {
+    width: 1200px;
+  }
+}
+body header .navbar .nav-container .navbar-header .navbar-toggle {
+  width: 100%;
+  float: none;
+  border: none;
+  margin-right: 0;
+}
+body header .navbar .nav-container .navbar-header .navbar-toggle:hover,
+body header .navbar .nav-container .navbar-header .navbar-toggle:focus {
+  background-color: white;
+}
+@media (max-width: 768px) {
+  body header .navbar .nav-container .navbar-collapse {
+    border-bottom: 1px solid #d8d8d8;
+    margin-bottom: 10px;
+  }
+}
+body header .navbar .nav-container .navbar-collapse ul.nav .line {
+  width: 0;
+  height: 16px;
+  margin: 17px 0;
+}
+@media (min-width: 768px) {
+  body header .navbar .nav-container .navbar-collapse ul.nav .line {
+    float: left;
+    border-right: 1px solid #212121;
+  }
+}
+@media (max-width: 768px) {
+  body header .navbar .nav-container .navbar-collapse ul.nav .line {
+    border-right: none;
+  }
+}
+body header .navbar .nav-container .navbar-collapse ul.nav li {
+  height: 50px;
+}
+body header .navbar .nav-container .navbar-collapse ul.nav li a {
+  padding: 15px 44px;
+}
+body header .navbar .nav-container .navbar-collapse ul.nav li a:focus {
+  color: #f0c541;
+}
+body header .navbar .nav-container .navbar-collapse ul.nav li a.slide {
+  display: none;
+}
+@media (max-width: 768px) {
+  body header .navbar .nav-container .navbar-collapse ul.nav li a:hover {
+    background-color: #f4f2f3;
+  }
+}
+@media (min-width: 768px) {
+  body header .navbar .nav-container .navbar-collapse ul.nav li:hover a.title {
+    color: #f0c541;
+    display: block;
+  }
+  body header .navbar .nav-container .navbar-collapse ul.nav li:hover a.slide {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 40px;
+    line-height: 40px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  body header .navbar .nav-container .navbar-collapse ul.nav li:hover a.slide:hover {
+    color: black;
+    background-color: #f0c541;
+  }
+}
+@media (min-width: 768px) {
+  body .context-container {
+    max-width: 1200px;
+  }
+}
+body .context-container .carousel {
+  padding-bottom: 36px;
+}
+@media (min-width: 768px) {
+  body .context-container .carousel {
+    padding-bottom: 36px;
+  }
+}
+@media (max-width: 768px) {
+  body .context-container .carousel {
+    padding-bottom: 25px;
+  }
+}
+body .context-container .carousel .carousel-indicators {
+  border-color: gray;
+  color: black;
+}
+body .context-container .carousel .carousel-indicators li {
+  background-color: #cecbcc;
+  border: none;
+  border-radius: 0;
+}
+@media (min-width: 768px) {
+  body .context-container .carousel .carousel-indicators li {
+    width: 30px;
+    height: 5px;
+    margin: 0 5px;
+  }
+}
+@media (max-width: 768px) {
+  body .context-container .carousel .carousel-indicators li {
+    width: 30px;
+    height: 4px;
+    margin: 0;
+  }
+}
+body .context-container .carousel .carousel-indicators .active {
+  background-color: #908a88;
+}
+body .context-container .carousel .carousel-inner {
+  bottom: 0px;
+  padding-bottom: 20px;
+}
+body .context-container .carousel .carousel-inner .item img {
+  width: 100%;
+}
+body .context-container .line {
+  width: 100%;
+  height: 0;
+  border-top: 1px solid #d8d8d8;
+  display: inherit;
+}
+body .context-container .row {
+  padding: 20px 0 30px;
+}
+body .context-container .row div img {
+  width: 100%;
+}
+body .context-container .row div p {
+  text-align: center;
+  font-size: 16px;
+  margin: 10px 0;
+}
+body footer {
+  padding: 30px 0 60px;
+  margin: 0px;
+  text-align: center;
+}
