@@ -271,25 +271,27 @@ margin-bottom: 1%;
             font-size: 18px;
             text-indent: 10px;
         }
-        .phone_tip{
-            font-size: 18px;
-            padding-top: 4px;
-            color:@color_1;
-            text-align: left;
-            margin:0px;
-            text-indent: 10px;
-            padding-bottom: 2%;
+    }
+    .phone_tip{
+        font-size: 18px;
+        padding-top: 4px;
+        color:@color_1;
+        text-align: left;
+        margin:0px;
+        text-indent: 10px;
+        padding-bottom: 2%;
+    }
+    .upload{
+
+        .upload-hide{
+            display: none;
         }
-        .upload{
-
-            .upload-hide{
-                display: none;
-            }
-            .col-xs-3{
-                padding:0px;
-                position:relative;
-
-                p{
+        .col-xs-3{
+            padding:0px;
+            position:relative;
+            form{
+                width: 100%;
+                #dd{
                     height:90px;
                     width:90px;
                     border:1px solid  #ddd;
@@ -316,25 +318,20 @@ margin-bottom: 1%;
                         position:absolute;
                         left:50%;
                         transform:translate(-50%,-50%);
-                    }   
-                }
-                .btn_upload{
-                    opacity: 0;
-                    height: 100%;
-                    margin: 0;
-                    position: absolute;
-                }
-        
-                #dvPreview{
-                    display: inline-block;
-                    width: 100%;
-                    height: 100%;
+                    }
                     img{
                         width: 100%;
                         height: 100%;
                     }
                 }
             }
+            .btn_upload{
+                opacity: 0;
+                height: 100%;
+                margin: 0;
+                position: absolute;
+            }
+        }
         background:#fff;
         padding:10px;
         .upload_tip{
@@ -347,7 +344,7 @@ margin-bottom: 1%;
             }
         }
     }
-}
+
 
 
 

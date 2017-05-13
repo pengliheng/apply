@@ -8,29 +8,51 @@
 
 namespace Home\Controller;
 
+use Home\Exception\HomeException;
 use Home\Request\Document\GetEventRequest;
 use Home\Service\GetEventService;
 use Home\Service\UploadService;
-use Think\Upload;
 
 
 class IndexController extends HomeController
 {
-    /* public function getEvent()
-     {
-         $request = new GetEventRequest();
-         $id = I('get.id', null);
-         $request->setId($id);
-         $service = new GetEventService();
+    /*public function getEvent()
+    {
+        $result = array(
+            'request' => array(
+                'status' => 'success',
+                'errcode' => 0,
+                'info' => ''
+            ),
+            'result' => array(
+                'status' => 'success',
+                'errcode' => 0,
+                'info' => ''
+            )
+        );
+        $request = new GetEventRequest();
+        $id = I('get.id', null);
+        $request->setId($id);
+        $service = new GetEventService();
 
-         $response = $service->run($request);
-         if ($response->getItIsNull() == true) {
-             $data = array();
-         } else {
-             $data = $response->getData();
-         }
-         dump($data);
-     }*/
+        try {
+            $response = $service->run($request);
+        } catch (HomeException $e) {
+            $result['request']['status'] = 'fail';
+            $result['request']['errcode'] = $e->getCode();
+            $result['request']['info'] = $e->getMessage();
+            unset($result['result']);
+            $this->ajaxReturn($result);
+        }
+
+        if ($response->getItIsNull() == true) {
+            $data = array();
+        } else {
+            $data = $response->getData();
+        }
+        $result['result']['data'] = $data;
+        $this->ajaxReturn($result);
+    }*/
 
     public function index()
     {
@@ -68,10 +90,5 @@ class IndexController extends HomeController
         $response = $service->run();
         $data = $response->getData();
         $this->ajaxReturn($data);
-    }
-
-    public function test()
-    {
-        echo I('get.id');
     }
 }

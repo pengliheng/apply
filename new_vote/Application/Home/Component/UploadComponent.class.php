@@ -19,16 +19,16 @@ class UploadComponent extends Component
         $upload = new Upload();
         $upload->maxSize = 3145728;
         $upload->exts = array('jpg', 'jpeg', 'gif', 'png');
-        $info = $upload->upload();
-        if ($info) {
-            $picture = '/Uploads/' . $info['photo']['savepath'] . $info['photo']['savename'];
+        $picture = $upload->upload();
+        if ($picture) {
+            $path = '/Uploads/' . $picture['photo']['savepath'] . $picture['photo']['savename'];
         } else {
-            $picture = '';
+            $path = '';
         }
-        $error = $upload->getError();
+        $info = $upload->getError();
         $data = array(
-            'picture' => $picture,
-            'error' => $error
+            'path' => $path,
+            'info' => $info
         );
         return $data;
     }

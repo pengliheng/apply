@@ -21,31 +21,34 @@ if (keys) {
     for (var i = keys.length; i--;) 
         document.cookie=keys[i]+'=0;expires=' + new Date( 0).toUTCString() 
 }
+/* 清除缓存，便于测试 */
+
+
 
 $(document).ready(function(){
-    $('form').change(function(){
-        var form='#'+$(this).attr("id");
+    $('.btn_upload').change(function(){
+        var form='#'+$(this).parent().parent().attr("id");
+        console.log(form);
         var photo=new FormData($(form)[0]);
+        console.log(photo);
         var thisfile = $(this);
-        var appId = document.getElementById("myDiv").dataset.appid;
+        var app = document.getElementById("myBody").dataset.app;
+        var dataRoot = document.getElementById("myBody").dataset.root;
+        console.log(app);
         $.ajax({
-            url:appId,
+            url:app,
             type:'post',
-            data:photo,
+            data:photo ,
             contentType: false,
             processData: false,
             success:function(res){
                 console.log(res.picture);
-                console.log(thisfile);
-                var html = '<img src="'+'http://localhost/new_vote'+res.picture+'" alt="">';
-                console.log(html);
-                thisfile.append(html);
+                thisfile.parent().find("img").attr("src",dataRoot + res.path);
                 console.log(res.error);
             }
         });
     });
 });
 
-console.log($(".textarea-max").val().length)
 
 

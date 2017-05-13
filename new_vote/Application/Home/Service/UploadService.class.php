@@ -9,6 +9,7 @@
 namespace Home\Service;
 
 use Common\Common\Service;
+use Home\Component\AddPictureComponent;
 use Home\Component\UploadComponent;
 use Home\Exception\HomeException;
 use Home\Response\UploadResponse;
@@ -22,6 +23,14 @@ class UploadService implements Service
 
         try {
             $data = $component->upload();
+            if (!$data['info']) {
+                $component = new AddPictureComponent();
+                $data['picId'] = $component->addPicture($data['path']);
+                $data['status'] = 'success';
+            } else {
+                $data['picId'] = '';
+                $data['status'] = 'fail';
+            }
             $response->setData($data);
         } catch (HomeException $e) {
             throw new HomeException($e->getMessage(), $e->getCode());

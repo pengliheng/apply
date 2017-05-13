@@ -14,7 +14,7 @@
     </style>
 </head>
 
-<body id="myDiv" style="    padding-bottom: 17%;" data-url="/new_vote/Home/Index/upload">
+<body id="myBody" style="padding-bottom: 17%;" data-app="/new_vote/Home/Index/upload" data-root="/new_vote">
 
 
 <div class="apply_title">
@@ -24,6 +24,8 @@
     <input onkeyup="this.value=this.value.replace(/[^\u4e00-\u9fa5]/g,'')" type="text" id="name" placeholder="请输入您的姓名" maxlength="4">
 
     <input onkeyup="this.value=this.value.replace(/\D/g,'')" type="text" id="phone" placeholder="请输入您的手机号码" maxlength="11">
+</form>
+
     <p class="phone_tip">
         * 请输入正确的手机号码，已便后需联系
     </p>
@@ -35,70 +37,86 @@
         <div class="upload_img">
             <div class="row">
                 <div class="col-xs-3 list-item">
-                    <p id="dd">
-                        <span class="line_1"></span>
-                        <span class="line_2"></span>
-                        <input multiple value="" id="btn_upload" class="btn_upload" type="file">
-                        <span id="dvPreview"></span>
-                    </p>
+                    <form action="" id="form1">
+                        <p id="dd">
+                            <span class="line_1"></span>
+                            <span class="line_2"></span>
+                            <input name="photo" multiple value="" id="btn_upload" class="btn_upload" type="file">
+                            <img src="" alt="">
+                        </p>
+                    </form>
                 </div>
                 <div class="col-xs-3 list-item upload-hide">
-                    <p id="dd">
-                        <span class="line_1"></span>
-                        <span class="line_2"></span>
-                        <input multiple value="" id="btn_upload" class="btn_upload" type="file">
-                        <span id="dvPreview"></span>
-                    </p>
+                    <form action="" id="form2">
+                        <p id="dd">
+                            <span class="line_1"></span>
+                            <span class="line_2"></span>
+                            <input name="photo" multiple value="" id="btn_upload" class="btn_upload" type="file">
+                            <img src="" alt="">
+                        </p>
+                    </form>
                 </div>
                 <div class="col-xs-3 list-item upload-hide">
-                    <p id="dd">
-                        <span class="line_1"></span>
-                        <span class="line_2"></span>
-                        <input multiple value="" id="btn_upload" class="btn_upload" type="file">
-                        <span id="dvPreview"></span>
-                    </p>
+                    <form action="" id="form3">
+                        <p id="dd">
+                            <span class="line_1"></span>
+                            <span class="line_2"></span>
+                            <input name="photo" multiple value="" id="btn_upload" class="btn_upload" type="file">
+                            <img src="" alt="">
+                        </p>
+                    </form>
                 </div>
                 <div class="col-xs-3 list-item upload-hide last-one">
-                    <p id="dd">
-                        <span class="line_1"></span>
-                        <span class="line_2"></span>
-                        <input multiple value="" id="btn_upload" class="btn_upload" type="file">
-                        <span id="dvPreview"></span>
-                    </p>
+                    <form action="" id="form4">
+                        <p id="dd">
+                            <span class="line_1"></span>
+                            <span class="line_2"></span>
+                            <input name="photo" multiple value="" id="btn_upload" class="btn_upload" type="file">
+                            <img src="" alt="">
+                        </p>
+                    </form>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-3 list-item upload-hide first-one">
-                    <p id="dd">
-                        <span class="line_1"></span>
-                        <span class="line_2"></span>
-                        <input multiple value="" id="btn_upload" class="btn_upload" type="file">
-                        <span id="dvPreview"></span>
-                    </p>
+                    <form action="" id="form3">
+                        <p id="dd">
+                            <span class="line_1"></span>
+                            <span class="line_2"></span>
+                            <input name="photo" multiple value="" id="btn_upload" class="btn_upload" type="file">
+                            <img src="" alt="">
+                        </p>
+                    </form>
                 </div>
                 <div class="col-xs-3 list-item upload-hide">
-                    <p id="dd">
-                        <span class="line_1"></span>
-                        <span class="line_2"></span>
-                        <input multiple value="" id="btn_upload" class="btn_upload" type="file">
-                        <span id="dvPreview"></span>
-                    </p>
+                    <form action="" id="form3">
+                        <p id="dd">
+                            <span class="line_1"></span>
+                            <span class="line_2"></span>
+                            <input name="photo" multiple value="" id="btn_upload" class="btn_upload" type="file">
+                            <img src="" alt="">
+                        </p>
+                    </form>
                 </div>
                 <div class="col-xs-3 list-item upload-hide">
-                    <p id="dd">
-                        <span class="line_1"></span>
-                        <span class="line_2"></span>
-                        <input multiple value="" id="btn_upload" class="btn_upload" type="file">
-                        <span id="dvPreview"></span>
-                    </p>
+                    <form action="" id="form3">
+                        <p id="dd">
+                            <span class="line_1"></span>
+                            <span class="line_2"></span>
+                            <input name="photo" multiple value="" id="btn_upload" class="btn_upload" type="file">
+                            <img src="" alt="">
+                        </p>
+                    </form>
                 </div>
                 <div class="col-xs-3 list-item upload-hide">
-                    <p id="dd">
-                        <span class="line_1"></span>
-                        <span class="line_2"></span>
-                        <input multiple value="" id="btn_upload" class="btn_upload" type="file">
-                        <span id="dvPreview"></span>
-                    </p>
+                    <form action="" id="form3">
+                        <p id="dd">
+                            <span class="line_1"></span>
+                            <span class="line_2"></span>
+                            <input name="photo" multiple value="" id="btn_upload" class="btn_upload" type="file">
+                            <img src="" alt="">
+                        </p>
+                    </form>
                 </div>
             </div>
         </div>
@@ -117,7 +135,6 @@
     </div>
 
 
-</form>
 <div class="footer text-center">
     <div class="row">
         <div class="col-xs-3 list-item">
