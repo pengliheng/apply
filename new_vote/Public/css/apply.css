@@ -1,0 +1,31 @@
+body {
+  background: #eee;
+  font-family: "鑻规柟";
+  font-size: 14px;
+  color: #303030;
+  margin: 0;
+  padding: 0;
+  max-width: 640px;
+  margin: 0 auto;
+  padding-bottom: 14%;
+}
+.footer {
+  position: fixed;
+  bottom: 0px;
+  height: auto;
+  background: #e7e7e7;
+  padding: 1% 7%;
+  width: 100%;
+  border-top: 1px solid #ddd;
+}
+.footer a {
+  color: #303030;
+  text-decoration: none;
+}
+.footer img {
+  max-width: 60%;
+}
+.footer p {
+  margin: 0px;
+  font-size: 16px;
+}

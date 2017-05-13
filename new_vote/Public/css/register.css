@@ -1,0 +1,15 @@
+#register{
+    width:auto;
+    height:600px;
+    border:2px solid #eee;
+}
+#register h2{
+    text-indent:0px;
+    text-align:center;
+}
+form{
+    text-align: center;
+}
+dl{
+    
+}

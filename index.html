@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>正觉设计</title>
+    <link href="lib/bootstrapt/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/index.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="lib/bootstrapt/html5shiv.min.js"></script>
+      <script src="lib/bootstrapt/respond.min.js"></script>
+    <![endif]-->
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular/angular-route.js"></script>
+    <!-- 接下来做几个笔记 -->
+    <!-- what's that mean?
+    ng-app       ：定义angular应用程序
+    ng-init      ：初始化程序变量
+    ng-model     ：获取程序变量
+    ng-bind      ：绑定变量
+    ng-controller：通过控制器控制应用程序，参数$scope代替制定的元素标签
+    -->
+  </head>
+  <body ng-app="routingDemoApp">
+  <div ng-view></div>
+    <header>
+      <nav class="navbar navbar-default">
+        <!-- 顶部图片 -->
+        <div class="container-fluid img-container">
+          <img src="img/top.jpg" alt="">
+        </div>
+        <!-- 导航栏 -->
+        <div class="container nav-container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span>目录  V</span>
+            </button>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <span class="line"></span>
+              <li id="home">
+                <a class="title" href="#/">首页/HOME</a>
+                <a class="slide" href="#/index-3?href=brand">品牌设计</a>
+                <a class="slide" href="#/index-3?href=logo">标志设计</a>
+                <a class="slide" href="#/index-3?href=brochure">画册设计</a>
+                <a class="slide" href="#/index-3?href=package">包装设计</a>
+              </li>
+              <span class="line"></span>
+              <li id="about">
+                <a class="title" href="#/index-2?href=about">关于/ABOUT</a>
+                <a class="slide" href="#/index-3?href=brand">品牌设计</a>
+                <a class="slide" href="#/index-3?href=logo">标志设计</a>
+                <a class="slide" href="#/index-3?href=brochure">画册设计</a>
+                <a class="slide" href="#/index-3?href=package">包装设计</a>
+              </li>
+              <span class="line"></span>
+              <li id="service">
+                <a class="title" href="#/index-2?href=service">服务/SERVICE</a>
+                <a class="slide" href="#/index-3?href=brand">品牌设计</a>
+                <a class="slide" href="#/index-3?href=logo">标志设计</a>
+                <a class="slide" href="#/index-3?href=brochure">画册设计</a>
+                <a class="slide" href="#/index-3?href=package">包装设计</a>
+              </li>
+              <span class="line"> </span>
+              <li id="service%20system">
+                <a class="title" href="#/index-2?href=service%20system">服务体系/SERVICE SYSTEM</a>
+                <a class="slide" href="#/index-3?href=brand">品牌设计</a>
+                <a class="slide" href="#/index-3?href=logo">标志设计</a>
+                <a class="slide" href="#/index-3?href=brochure">画册设计</a>
+                <a class="slide" href="#/index-3?href=package">包装设计</a>
+              </li>
+              <span class="line"> </span>
+              <li id="case">
+                <a class="title" href="#/index-2?href=case">案例/CASE</a>
+                <a class="slide" href="#/index-3?href=brand">品牌设计</a>
+                <a class="slide" href="#/index-3?href=logo">标志设计</a>
+                <a class="slide" href="#/index-3?href=brochure">画册设计</a>
+                <a class="slide" href="#/index-3?href=package">包装设计</a>
+              </li>
+              <span class="line"> </span>
+              <li id="contact">
+                <a class="title" href="#/index-2?href=contact">联系/CONTACT</a>
+                <a class="slide" href="#/index-3?href=brand">品牌设计</a>
+                <a class="slide" href="#/index-3?href=logo">标志设计</a>
+                <a class="slide" href="#/index-3?href=brochure">画册设计</a>
+                <a class="slide" href="#/index-3?href=package">包装设计</a>
+              </li>
+              <span class="line"> </span>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
+    <div class="container context-container">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img src="img/carousel.jpg" alt="...">
+          </div>
+          <div class="item">
+            <img src="img/carousel.jpg" alt="...">
+          </div>
+          <div class="item">
+            <img src="img/carousel.jpg" alt="...">
+          </div>
+          <div class="item">
+            <img src="img/carousel.jpg" alt="...">
+          </div>
+          <div class="item">
+            <img src="img/carousel.jpg" alt="...">
+          </div>
+        </div>
+      </div>
+      <span class="line"></span>
+      <div class="row">
+        <div class="col-sm-4 col-lg-4">
+          <img src="img/some.jpg" alt="">
+          <p><b>品牌设计</b>#私人定制#</p>
+        </div>
+        <div class="col-sm-4 col-lg-4">
+          <img src="img/some.jpg" alt="">
+          <p><b>品牌设计</b>#私人定制#</p>
+        </div>
+        <div class="col-sm-4 col-lg-4">
+          <img src="img/some.jpg" alt="">
+          <p><b>品牌设计</b>#私人定制#</p>
+        </div>
+      </div>
+      <span class="line"></span>
+    </div>
+    <footer>
+      <p>COPYRIGHT 中山正觉设计 ALL RIGHTS RESERVED</p>
+      <p>粤-CP备00000000号-1</p>
+      <p>DESIGN BY 中山正觉设计</p>
+      <img class="img-circle" src="img/wechat.jpg" alt="">
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="lib/bootstrapt/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
