@@ -14,7 +14,7 @@
     </style>
 </head>
 
-<body style="    padding-bottom: 17%;">
+<body id="myDiv" style="    padding-bottom: 17%;" data-url="/new_vote/Home/Index/upload">
 
 
 <div class="apply_title">

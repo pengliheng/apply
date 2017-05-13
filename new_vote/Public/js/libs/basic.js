@@ -22,54 +22,28 @@ if (keys) {
         document.cookie=keys[i]+'=0;expires=' + new Date( 0).toUTCString() 
 }
 
-$(function () {
-    $(".btn_upload").on("change",function(){
-        var clickfile = $(this)
-        if (typeof (FileReader) != "undefined") {
-            var dvPreview = $(this).parent().find("#dvPreview");
-            dvPreview.html("");
-            var regex = /(.jpg|.jpeg|.gif|.png|.bmp)$/;
-            $($(this)[0].files).each(function () {
-                var file = $(this);
-                if (regex.test(file[0].name.toLowerCase())) {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        var img = $("<img />");
-                        img.attr("src", e.target.result);
-
-                        console.log(e.target.result);
-                        var photo=e.target.result;
-                        $.ajax({
-                            url:'/new_vote/Home/Index/apply.html',
-                            type:'post',
-                            data:photo,
-                            contentType: false,
-                            processData: false,
-                            success:function(res){
-                                alert(res.picture);
-                                alert(res.error);
-                                dvPreview.append(img);
-                            }
-                        });
-
-
-                    }
-                    //点击触发取消上传框隐藏事件
-                    clickfile.parent().parent().next().removeClass("upload-hide");
-                    clickfile.parent().parent().parent().find(".last-one").change(function(){
-                        $(this).parent().parent().find(".first-one").removeClass("upload-hide");
-                    })
-                    reader.readAsDataURL(file[0]);
-                } else {
-                alert(file[0].name + " is not a valid image file.");
-                dvPreview.html("");
-                return false;
-                }
-            });
-        } else {
-        alert("This browser does not support HTML5 FileReader.");
-        }
-    })
+$(document).ready(function(){
+    $('form').change(function(){
+        var form='#'+$(this).attr("id");
+        var photo=new FormData($(form)[0]);
+        var thisfile = $(this);
+        var appId = document.getElementById("myDiv").dataset.appid;
+        $.ajax({
+            url:appId,
+            type:'post',
+            data:photo,
+            contentType: false,
+            processData: false,
+            success:function(res){
+                console.log(res.picture);
+                console.log(thisfile);
+                var html = '<img src="'+'http://localhost/new_vote'+res.picture+'" alt="">';
+                console.log(html);
+                thisfile.append(html);
+                console.log(res.error);
+            }
+        });
+    });
 });
 
 console.log($(".textarea-max").val().length)
