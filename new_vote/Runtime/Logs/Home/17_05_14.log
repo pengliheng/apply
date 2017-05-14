@@ -9529,3 +9529,63 @@ NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array
 SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0087s ]
 SQL: INSERT INTO `picture` (`path`) VALUES ('/Uploads/2017-05-14/5917aabf15add.jpg') [ RunTime:0.0001s ]
 
+[ 2017-05-14T10:47:13+08:00 ] ::1 /new_vote/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002318s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000608s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000653s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001857s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001928s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018484s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018557s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000724s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000787s ]
+
+[ 2017-05-14T10:47:17+08:00 ] ::1 /new_vote/Home/Index/apply.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000834s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001949s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002069s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000188s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021273s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021342s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000903s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000957s ]
+
+[ 2017-05-14T10:48:15+08:00 ] ::1 /new_vote/Home/Index/upload
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000582s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000704s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given C:\phpStudy\WWW\new_vote\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+ERR: SQLSTATE[HY000] [1049] Unknown database 'new_vote'
+
+[ 2017-05-14T10:48:46+08:00 ] ::1 /new_vote/Home/Index/upload
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001404s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001509s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given C:\phpStudy\WWW\new_vote\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+ERR: SQLSTATE[HY000] [1049] Unknown database 'new_vote'
+
