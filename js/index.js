@@ -13,9 +13,3 @@ $("ul.nav li").click(function(){
     $('ul.nav li').removeClass("on"); 
     $(this).addClass("on"); 
 })
-
-var url = top.location.href;
-
-var urlMsg = url.split("=")[1];
-
-console.log(urlMsg)

@@ -1,82 +1,4 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>$animate</title>
-  <script src="http://cdn.bootcss.com/jquery/3.0.0-alpha1/jquery.js"></script>
-  <script src="lib/angular/angular.min.js"></script>
-  <script src="lib/angular/angular-animate.min.js"></script>
-  <style type="text/css" media="screen">
-    .fade { transition: 1s linear all; -webkit-transition: 1s linear all; }
-        .fade.ng-enter { opacity: 0; }
-            .fade.ng-enter.ng-enter-active { opacity: 1; }
-        .fade.ng-leave { opacity: 1; }
-            .fade.ng-leave.ng-leave-active { opacity: 0; }
-  </style>
-</head>
-<body ng-app="Demo" ng-controller="testCtrl as ctrl">
-    <div>
-        <h1>Test List</h1>
-        <ul>
-            <li ng-repeat="item in ctrl.items" class="fade">{{item.value}}
-          <a href="javascript:void(0);" ng-click="ctrl.removeItem($index)">remove</a>
-            </li>
-        </ul>
-        <br />
-         <input type="text" ng-model="ctrl.item.value" />
-      <button ng-click="ctrl.addItem()">Add item</button>
-        <br />
-        <button ng-click="ctrl.bottomToTop()">我要上头条！！！</button>
-    </div>
-<script type="text/javascript">
-  (function(){
-     var app = angular.module('Demo', ["ngAnimate"])
-     .animation('.fade', fade)
-     .controller('testCtrl',testCtrl);
-     function fade() {
-         return {
-             enter: function (element, done) {
-                 element.css('display', 'none');
-                 $(element).fadeIn(1000, function () {
-                     done();
-                 });
-             },
-             leave: function (element, done) {
-                 $(element).fadeOut(1000, function () {
-                     done();
-                 });
-             },
-             move: function (element, done) {
-                 element.css('display', 'none');
-                 $(element).slideDown(500, function () {
-                     done();
-                 });
-             }
-         }
-     }
-     function testCtrl() {
-        this.items = [
-           { value: "AAAAA" },
-           { value: "BBBBB" },
-           { value: "CCCCC" },
-           { value: "DDDDD" },
-           { value: "EEEEE" }
-        ];
-        this.addItem = function () {
-            this.items.push(this.item);
-            this.item = {};
-        };
-        this.removeItem = function (index) {
-            this.items.splice(index, 1);
-        };
-        this.bottomToTop = function () {
-            this.items.unshift(this.items.pop());
-        };
-     }
-  }());
-</script>
-</body>
-=======
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
@@ -104,7 +26,6 @@
     -->
   </head>
   <body ng-app="routingDemoApp">
-  <div ng-view></div>
     <header>
       <nav class="navbar navbar-default">
         <!-- 顶部图片 -->
@@ -133,43 +54,43 @@
               </li>
               <span class="line"></span>
               <li id="about">
-                <a class="title" href="#/index-2?href=about">关于/ABOUT</a>
-                <a class="slide" href="#/index-3?href=brand">品牌设计</a>
-                <a class="slide" href="#/index-3?href=logo">标志设计</a>
-                <a class="slide" href="#/index-3?href=brochure">画册设计</a>
-                <a class="slide" href="#/index-3?href=package">包装设计</a>
+                <a class="title" href="#/second">关于/ABOUT</a>
+                <a class="slide" href="#/third">品牌设计</a>
+                <a class="slide" href="#/third">标志设计</a>
+                <a class="slide" href="#/third">画册设计</a>
+                <a class="slide" href="#/third">包装设计</a>
               </li>
               <span class="line"></span>
               <li id="service">
-                <a class="title" href="#/index-2?href=service">服务/SERVICE</a>
-                <a class="slide" href="#/index-3?href=brand">品牌设计</a>
-                <a class="slide" href="#/index-3?href=logo">标志设计</a>
-                <a class="slide" href="#/index-3?href=brochure">画册设计</a>
-                <a class="slide" href="#/index-3?href=package">包装设计</a>
+                <a class="title" href="#/second">服务/SERVICE</a>
+                <a class="slide" href="#/third">品牌设计</a>
+                <a class="slide" href="#/third">标志设计</a>
+                <a class="slide" href="#/third">画册设计</a>
+                <a class="slide" href="#/third">包装设计</a>
               </li>
               <span class="line"> </span>
               <li id="service%20system">
-                <a class="title" href="#/index-2?href=service%20system">服务体系/SERVICE SYSTEM</a>
-                <a class="slide" href="#/index-3?href=brand">品牌设计</a>
-                <a class="slide" href="#/index-3?href=logo">标志设计</a>
-                <a class="slide" href="#/index-3?href=brochure">画册设计</a>
-                <a class="slide" href="#/index-3?href=package">包装设计</a>
+                <a class="title" href="#/second">服务体系/SERVICE SYSTEM</a>
+                <a class="slide" href="#/third">品牌设计</a>
+                <a class="slide" href="#/third">标志设计</a>
+                <a class="slide" href="#/third">画册设计</a>
+                <a class="slide" href="#/third">包装设计</a>
               </li>
               <span class="line"> </span>
               <li id="case">
-                <a class="title" href="#/index-2?href=case">案例/CASE</a>
-                <a class="slide" href="#/index-3?href=brand">品牌设计</a>
-                <a class="slide" href="#/index-3?href=logo">标志设计</a>
-                <a class="slide" href="#/index-3?href=brochure">画册设计</a>
-                <a class="slide" href="#/index-3?href=package">包装设计</a>
+                <a class="title" href="#/second">案例/CASE</a>
+                <a class="slide" href="#/third">品牌设计</a>
+                <a class="slide" href="#/third">标志设计</a>
+                <a class="slide" href="#/third">画册设计</a>
+                <a class="slide" href="#/third">包装设计</a>
               </li>
               <span class="line"> </span>
               <li id="contact">
-                <a class="title" href="#/index-2?href=contact">联系/CONTACT</a>
-                <a class="slide" href="#/index-3?href=brand">品牌设计</a>
-                <a class="slide" href="#/index-3?href=logo">标志设计</a>
-                <a class="slide" href="#/index-3?href=brochure">画册设计</a>
-                <a class="slide" href="#/index-3?href=package">包装设计</a>
+                <a class="title" href="#/second">联系/CONTACT</a>
+                <a class="slide" href="#/third">品牌设计</a>
+                <a class="slide" href="#/third">标志设计</a>
+                <a class="slide" href="#/third">画册设计</a>
+                <a class="slide" href="#/third">包装设计</a>
               </li>
               <span class="line"> </span>
             </ul>
@@ -177,52 +98,7 @@
         </div><!-- /.container-fluid -->
       </nav>
     </header>
-    <div class="container context-container">
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-        </ol>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <img src="img/carousel.jpg" alt="...">
-          </div>
-          <div class="item">
-            <img src="img/carousel.jpg" alt="...">
-          </div>
-          <div class="item">
-            <img src="img/carousel.jpg" alt="...">
-          </div>
-          <div class="item">
-            <img src="img/carousel.jpg" alt="...">
-          </div>
-          <div class="item">
-            <img src="img/carousel.jpg" alt="...">
-          </div>
-        </div>
-      </div>
-      <span class="line"></span>
-      <div class="row">
-        <div class="col-sm-4 col-lg-4">
-          <img src="img/some.jpg" alt="">
-          <p><b>品牌设计</b>#私人定制#</p>
-        </div>
-        <div class="col-sm-4 col-lg-4">
-          <img src="img/some.jpg" alt="">
-          <p><b>品牌设计</b>#私人定制#</p>
-        </div>
-        <div class="col-sm-4 col-lg-4">
-          <img src="img/some.jpg" alt="">
-          <p><b>品牌设计</b>#私人定制#</p>
-        </div>
-      </div>
-      <span class="line"></span>
-    </div>
+    <div ng-view></div>
     <footer>
       <p>COPYRIGHT 中山正觉设计 ALL RIGHTS RESERVED</p>
       <p>粤-CP备00000000号-1</p>
