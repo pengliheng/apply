@@ -21,7 +21,7 @@
     活动报名处
 </div>
 <form action="" method="">
-    <input onkeyup="this.value=this.value.replace(/[^\u4e00-\u9fa5]/g,'')" type="text" id="name" placeholder="请输入您的姓名" maxlength="4">
+    <input onkeyup="this.value=this.value.replace(/[^\u4e00-\u9fa5]/g,'')" type="text" id="name" placeholder="请输入您的姓名" maxlength="10">
 
     <input onkeyup="this.value=this.value.replace(/\D/g,'')" type="text" id="phone" placeholder="请输入您的手机号码" maxlength="11">
 </form>

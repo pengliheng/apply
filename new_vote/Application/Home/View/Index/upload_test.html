@@ -10,10 +10,7 @@
     $(document).ready(function () {
         $('form').change(function () {
             var form = '#' + $(this).attr("id");
-            console.log(form);
             var photo = new FormData($(form)[0]);
-            console.log(photo);
-            console.log('__APP__/Home/Index/upload');
             thisfile = $(this) ; 
             $.ajax({
                 url: '__APP__/Home/Index/upload',

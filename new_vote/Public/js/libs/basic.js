@@ -28,13 +28,10 @@ if (keys) {
 $(document).ready(function(){
     $('.btn_upload').change(function(){
         var form='#'+$(this).parent().parent().attr("id");
-        console.log(form);
         var photo=new FormData($(form)[0]);
-        console.log(photo);
         var thisfile = $(this);
         var app = document.getElementById("myBody").dataset.app;
         var dataRoot = document.getElementById("myBody").dataset.root;
-        console.log(app);
         $.ajax({
             url:app,
             type:'post',
@@ -42,9 +39,18 @@ $(document).ready(function(){
             contentType: false,
             processData: false,
             success:function(res){
-                console.log(res.picture);
+                if(res.status == "fail"){
+                    console.log(res.status);
+                    return
+                }
                 thisfile.parent().find("img").attr("src",dataRoot + res.path);
+                console.log(res.picture);
                 console.log(res.error);
+                thisfile.parent().parent().parent().next().removeClass("upload-hide");
+                thisfile.parent().parent().parent().parent().find(".last-one").change(function(){
+                    $(".first-one").removeClass("upload-hide");
+                    $(".first-one").parent().addClass("margin_top");
+                })
             }
         });
     });
