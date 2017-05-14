@@ -2,9 +2,9 @@
 angular.module('routingDemoApp',['ngRoute'])
 .config(['$routeProvider', function($routeProvider){
     $routeProvider
-    .when('/',{templateUrl:'home.html'})
-    .when('/second',{templateUrl:'second.html'})
-    .when('/third',{templateUrl:'third.html'})
+    .when('/',{templateUrl:'view/home.html'})
+    .when('/second',{templateUrl:'view/second.html'})
+    .when('/third',{templateUrl:'view/third.html'})
     .otherwise({redirectTo:'/'});
 }]);
 
