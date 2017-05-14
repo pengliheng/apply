@@ -1,0 +1,16 @@
+接下来做几个笔记
+
+what's that mean?
+ng-app       :定义angularjs的应用程序
+ng-init      :初始化应用程序变量
+ng-model     :获取应用程序变量
+ng-bind      :绑定程序变量
+ng-controller：通过控制器控制应用程序，，参数$scope代替制定的元素标签
+
+论背诵重要性，东西靠理解，但是连ng-model的语义都不懂的童鞋就需要靠背诵来快速入门了
+
+ng-model="变量for example'jhon'"
+初学者看到"="就以为是命名，其实在angular里面这里的意思是获取变量
+并不是像js，jq里面那样的 var ng-model = jhon的赋值，
+这里是获取变量因为之前在大div元素已经用  ng-init="first='jhon'"
+来赋予first变量予以jhon值
