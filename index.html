@@ -15,7 +15,8 @@
       <script src="lib/bootstrapt/respond.min.js"></script>
     <![endif]-->
     <script src="lib/angular/angular.min.js"></script>
-    <script src="lib/angular/angular-route.js"></script>
+    <!-- <script src="lib/angular/angular-route.js"></script> -->
+    <script src="lib/angular/angular-ui-router.min.js"></script>
     <!-- 接下来做几个笔记 -->
     <!-- what's that mean?
     ng-app       ：定义angular应用程序
@@ -25,7 +26,7 @@
     ng-controller：通过控制器控制应用程序，参数$scope代替制定的元素标签
     -->
   </head>
-  <body ng-app="routingDemoApp">
+  <body ng-app="uirouterdemo">
     <header>
       <nav class="navbar navbar-default">
         <!-- 顶部图片 -->
@@ -46,51 +47,51 @@
             <ul class="nav navbar-nav">
               <span class="line"></span>
               <li id="home">
-                <a class="title" href="#/">首页/HOME</a>
-                <a class="slide" href="#/index-3?href=brand">品牌设计</a>
-                <a class="slide" href="#/index-3?href=logo">标志设计</a>
-                <a class="slide" href="#/index-3?href=brochure">画册设计</a>
-                <a class="slide" href="#/index-3?href=package">包装设计</a>
+                <a class="title" ui-sref="home" ui-sref-active="active">首页/HOME</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">品牌设计</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">标志设计</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">画册设计</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">包装设计</a>
               </li>
               <span class="line"></span>
               <li id="about">
-                <a class="title" href="#/second">关于/ABOUT</a>
-                <a class="slide" href="#/third">品牌设计</a>
-                <a class="slide" href="#/third">标志设计</a>
-                <a class="slide" href="#/third">画册设计</a>
-                <a class="slide" href="#/third">包装设计</a>
+                <a class="title" ui-sref="second" ui-sref-active="active">关于/ABOUT</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">品牌设计</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">标志设计</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">画册设计</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">包装设计</a>
               </li>
               <span class="line"></span>
               <li id="service">
-                <a class="title" href="#/second">服务/SERVICE</a>
-                <a class="slide" href="#/third">品牌设计</a>
-                <a class="slide" href="#/third">标志设计</a>
-                <a class="slide" href="#/third">画册设计</a>
-                <a class="slide" href="#/third">包装设计</a>
+                <a class="title" ui-sref="second" ui-sref-active="active">服务/SERVICE</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">品牌设计</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">标志设计</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">画册设计</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">包装设计</a>
               </li>
               <span class="line"> </span>
               <li id="service%20system">
-                <a class="title" href="#/second">服务体系/SERVICE SYSTEM</a>
-                <a class="slide" href="#/third">品牌设计</a>
-                <a class="slide" href="#/third">标志设计</a>
-                <a class="slide" href="#/third">画册设计</a>
-                <a class="slide" href="#/third">包装设计</a>
+                <a class="title" ui-sref="second" ui-sref-active="active">服务体系/SERVICE SYSTEM</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">品牌设计</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">标志设计</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">画册设计</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">包装设计</a>
               </li>
               <span class="line"> </span>
               <li id="case">
-                <a class="title" href="#/second">案例/CASE</a>
-                <a class="slide" href="#/third">品牌设计</a>
-                <a class="slide" href="#/third">标志设计</a>
-                <a class="slide" href="#/third">画册设计</a>
-                <a class="slide" href="#/third">包装设计</a>
+                <a class="title" ui-sref="second" ui-sref-active="active">案例/CASE</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">品牌设计</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">标志设计</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">画册设计</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">包装设计</a>
               </li>
               <span class="line"> </span>
               <li id="contact">
-                <a class="title" href="#/second">联系/CONTACT</a>
-                <a class="slide" href="#/third">品牌设计</a>
-                <a class="slide" href="#/third">标志设计</a>
-                <a class="slide" href="#/third">画册设计</a>
-                <a class="slide" href="#/third">包装设计</a>
+                <a class="title" ui-sref="second" ui-sref-active="active">联系/CONTACT</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">品牌设计</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">标志设计</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">画册设计</a>
+                <a class="slide" ui-sref="third" ui-sref-active="active">包装设计</a>
               </li>
               <span class="line"> </span>
             </ul>
@@ -98,7 +99,7 @@
         </div><!-- /.container-fluid -->
       </nav>
     </header>
-    <div ng-view></div>
+    <div ui-view></div>
     <footer>
       <p>COPYRIGHT 中山正觉设计 ALL RIGHTS RESERVED</p>
       <p>粤-CP备00000000号-1</p>

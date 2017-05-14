@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular/angular-ui-router.min.js"></script>
+    <script>
+angular.module('uirouterdemo', ['ui.router'])
+.config(function($stateProvider) {
+    var homeState = {
+        name: '',
+        url: '/',
+        templateUrl: 'view/home.html'
+    }
+
+    var secondState = {
+        name: 'second',
+        url: '/second',
+        templateUrl: 'view/second.html'
+    }
+
+    var thirdState = {
+        name: 'third',
+        url: '/third',
+        templateUrl: 'view/third.html'
+    }
+
+    $stateProvider.state(homeState);
+    $stateProvider.state(secondState);
+    $stateProvider.state(thirdState);
+});
+    </script>
+
+    <style>.active { color: red; font-weight: bold; }</style>
+  </head>
+
+  <body ng-app="uirouterdemo">
+    <a  ui-sref="home" ui-sref-active="active">home</a>
+    <a  ui-sref="second" ui-sref-active="active">second</a>
+    <a  ui-sref="third" ui-sref-active="active">third</a>
+    <a  ui-sref="third" ui-sref-active="active">third</a>
+    <a  ui-sref="third" ui-sref-active="active">third</a>
+
+    <ui-view></ui-view>
+  </body>
+</html>
