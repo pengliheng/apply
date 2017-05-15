@@ -6,7 +6,7 @@
 angular.module('uirouterdemo', ['ui.router'])
 .config(function($stateProvider) {
     var homeState = {
-        name: '',
+        name: 'home',
         url: '/',
         templateUrl: 'view/home.html'
     }
@@ -17,15 +17,8 @@ angular.module('uirouterdemo', ['ui.router'])
         templateUrl: 'view/second.html'
     }
 
-    var thirdState = {
-        name: 'third',
-        url: '/third',
-        templateUrl: 'view/third.html'
-    }
-
     $stateProvider.state(homeState);
     $stateProvider.state(secondState);
-    $stateProvider.state(thirdState);
 });
     </script>
 
@@ -35,10 +28,6 @@ angular.module('uirouterdemo', ['ui.router'])
   <body ng-app="uirouterdemo">
     <a  ui-sref="home" ui-sref-active="active">home</a>
     <a  ui-sref="second" ui-sref-active="active">second</a>
-    <a  ui-sref="third" ui-sref-active="active">third</a>
-    <a  ui-sref="third" ui-sref-active="active">third</a>
-    <a  ui-sref="third" ui-sref-active="active">third</a>
-
     <ui-view></ui-view>
   </body>
 </html>

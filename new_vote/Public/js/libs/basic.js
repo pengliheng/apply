@@ -43,9 +43,10 @@ $(document).ready(function(){
                     console.log(res.status);
                     return
                 }
+                thisfile.parent().find("img").attr("id", res.picId);
                 thisfile.parent().find("img").attr("src",dataRoot + res.path);
-                console.log(res.picture);
-                console.log(res.error);
+                //console.log(res.picture);
+                //console.log(res.error);
                 thisfile.parent().parent().parent().next().removeClass("upload-hide");
                 thisfile.parent().parent().parent().parent().find(".last-one").change(function(){
                     $(".first-one").removeClass("upload-hide");
@@ -54,6 +55,50 @@ $(document).ready(function(){
             }
         });
     });
+
+    // $(".textarea-max").focus(function(){
+
+    //     $(this).val($(".textarea-max").val().substr(15,$(".textarea-max").val().length));
+    // })
+
+    $(".textarea-max").keyup(function(){
+        var hasnumber = $(this).val().length;
+        var lastnumber = 60- hasnumber ;
+        if($(this).val().length >= 60){
+            $(this).next().html( "*不得超过60个字")
+        }else{
+            $(this).next().html( "*还剩下"+ lastnumber +"个字")
+        }
+    })
+
+    $(".bt button").click(function(){
+        var imgId; 
+        var imgMsg = {}; 
+        for (var i = 1; i <= 8; i++) {
+            imgid = "#form"+i+" img";
+            var imgSrc = $(imgid).attr("id");
+            if(imgSrc == undefined){
+                break;
+            }
+            imgMsg[i] = imgSrc;
+        };
+        var msg = {
+            'name':$("#name").val(),
+            'phone':$("#phone").val(),
+            "imgMsg":imgMsg,
+            "context":$(".textarea-max").val().substr(15,$(".textarea-max").val().length)
+        };
+        $.ajax({
+            url:"/new_vote/Home/Index/upload",
+            type:'post',
+            data:msg,
+            contentType: false,
+            processData: false,
+            success:function(res){
+
+            }
+        });
+    })
 });
 
 
