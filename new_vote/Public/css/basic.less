@@ -11,9 +11,6 @@ body {
     max-width: 640px;
     padding-bottom: 14%;
     position:relative;
-    text-align: center;
-    position:relative;
-    width:95%;
     margin: 0 auto;
 }
 
@@ -180,6 +177,7 @@ margin-bottom: 5px;
         width:100%;
         margin-bottom: 2%;
         padding:10px;
+        cursor:pointer;
 
 
         &:nth-of-type(1){
@@ -240,8 +238,11 @@ position:relative;
         width:100%;
         resize: none;
         height:70px;
-        text-indent: 10px;
         margin-bottom: 1%;
+        overflow: hidden;
+        padding: 16px 20px;
+        display: table-cell;
+        vertical-align: middle;
     }
     margin-top: 2%;
     .area{
@@ -272,7 +273,7 @@ position:relative;
         }
     }
     .phone_tip{
-        font-size: 18px;
+        font-size: 15px;
         padding-top: 4px;
         color:@color_1;
         text-align: left;
@@ -349,7 +350,7 @@ position:relative;
         background:#fff;
         padding:10px;
         .upload_tip{
-            font-size: 18px;
+            font-size: 15px;
             text-align: left;
         }
         .upload_img{

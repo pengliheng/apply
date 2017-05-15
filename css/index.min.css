@@ -20,8 +20,8 @@ body header .navbar .nav-container .navbar-collapse ul.nav li a.slide{display:no
 @media (min-width:768px){body header .navbar .nav-container .navbar-collapse ul.nav li:hover a.title{color:#f0c541;display:block}
 body header .navbar .nav-container .navbar-collapse ul.nav li:hover a.slide{display:block;background-color:rgba(0,0,0,.3);height:40px;line-height:40px;padding-top:0;padding-bottom:0}
 body header .navbar .nav-container .navbar-collapse ul.nav li:hover a.slide:hover{color:#000;background-color:#f0c541}}
-body header .navbar .nav-container .navbar-collapse ul.nav .on a.title{color:#f0c541}
-@media (min-width:768px){body header .navbar .nav-container .navbar-collapse ul.nav .on a:focus{background-color:inherit}}
+body header .navbar .nav-container .navbar-collapse ul.nav .on,body header .navbar .nav-container .navbar-collapse ul.nav .on a.title{color:#f0c541}
+@media (min-width:768px){body header .navbar .nav-container .navbar-collapse ul.nav .on:focus{background-color:inherit}}
 @media (min-width:768px){body .context-container{max-width:1200px}}
 body .context-container .carousel{padding-bottom:36px}
 @media (min-width:768px){body .context-container .carousel{padding-bottom:36px}}

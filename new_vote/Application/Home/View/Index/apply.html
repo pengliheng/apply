@@ -14,14 +14,14 @@
     </style>
 </head>
 
-<body id="myBody" style="padding-bottom: 17%;" data-app="__APP__/Home/Index/upload" data-root="__ROOT__">
+<body id="myBody" style="padding-bottom: 17%;width:95%;" data-app="__APP__/Home/Index/upload" data-root="__ROOT__">
 
 
 <div class="apply_title">
     活动报名处
 </div>
 <form action="" method="">
-    <input onkeyup="this.value=this.value.replace(/[^\u4e00-\u9fa5]/g,'')" type="text" id="name" placeholder="请输入您的姓名" maxlength="10">
+    <input type="text" id="name" placeholder="请输入您的姓名" maxlength="10">
 
     <input onkeyup="this.value=this.value.replace(/\D/g,'')" type="text" id="phone" placeholder="请输入您的手机号码" maxlength="11">
 </form>
@@ -79,7 +79,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-3 list-item upload-hide first-one">
-                    <form action="" id="form3">
+                    <form action="" id="form5">
                         <p id="dd">
                             <span class="line_1"></span>
                             <span class="line_2"></span>
@@ -89,7 +89,7 @@
                     </form>
                 </div>
                 <div class="col-xs-3 list-item upload-hide">
-                    <form action="" id="form3">
+                    <form action="" id="form6">
                         <p id="dd">
                             <span class="line_1"></span>
                             <span class="line_2"></span>
@@ -99,7 +99,7 @@
                     </form>
                 </div>
                 <div class="col-xs-3 list-item upload-hide">
-                    <form action="" id="form3">
+                    <form action="" id="form7">
                         <p id="dd">
                             <span class="line_1"></span>
                             <span class="line_2"></span>
@@ -109,7 +109,7 @@
                     </form>
                 </div>
                 <div class="col-xs-3 list-item upload-hide">
-                    <form action="" id="form3">
+                    <form action="" id="form8">
                         <p id="dd">
                             <span class="line_1"></span>
                             <span class="line_2"></span>
@@ -122,15 +122,13 @@
         </div>
     </div>
     <div class="messages">
-        <textarea class="textarea-max">
-      
-        </textarea>
+        <textarea class="textarea-max" maxlength="60"></textarea>
         <p class="area">*不得超过60个字</p>
     </div>
 
 
     <div class="bt">
-        <button type="button" class="btn">提交</button>
+        <button type="button" class="btn sub-btn">提交</button>
         <button type="button" class="btn">返回首页</button>
     </div>
 
