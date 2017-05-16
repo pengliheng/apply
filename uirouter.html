@@ -1,33 +1,77 @@
 <html>
-  <head>
-    <script src="lib/angular/angular.min.js"></script>
-    <script src="lib/angular/angular-ui-router.min.js"></script>
-    <script>
-angular.module('uirouterdemo', ['ui.router'])
-.config(function($stateProvider) {
-    var homeState = {
-        name: 'home',
-        url: '/',
-        templateUrl: 'view/home.html'
-    }
+    <head>
+        <script src="http://apps.bdimg.com/libs/angular.js/1.5.0-beta.0/angular-animate.js"></script>
+        <script src="http://apps.bdimg.com/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+        <script>
+            angular.module('helloGalaxy').component('hello',{
+                template:   '<h3>{{$ctrl.greeting}} Solar System!</h3>'+
+                            '<button ng-click="$ctrl.toggleGreeting()">toggle greeting<button>',
+                controller: function(){
+                    this.greeting = 'hello';
+                    this.toggleGreeting = function(){
+                        this.toggleGreeting = (this.greeting == 'hello') ? 'what up' : 'hello'
+                    }
+                }
+            })
 
-    var secondState = {
-        name: 'second',
-        url: '/second',
-        templateUrl: 'view/second.html'
-    }
+            var helloGalaxy = {
+                name : "hello",
+                url : "/hello",
+                component : 'hello'
+            }
 
-    $stateProvider.state(homeState);
-    $stateProvider.state(secondState);
-});
-    </script>
+            var peopleState = {
+                name: 'people',
+                url : '/people',
+                component: 'people',
+                resolve:{
+                    people:function(PeopleService){
+                        return PeopleService.getAllPeople();
+                    }
+                }
+            }
 
-    <style>.active { color: red; font-weight: bold; }</style>
-  </head>
+            angular.module('hellogalaxy').component('people',{
+                bindings:{people:'<'},
 
+                template:   '<h3>Some people:</h3>'+
+                            '<ul>'+
+                            '   <li ng-repeat="person in $ctrl.people">'+
+                            '       <a ui-serf="person({personId:person.id})">'+
+                            '           {{person.name}}'+
+                            '       </a>'+
+                            '   </li>'+
+                            '</ul>'
+            })
+
+            var person = {
+                name: 'person',
+                url : '/person/{personId}',
+                component: 'person',
+                resolve:{
+                    person:function(PeopleService, $transition$){
+                        return PeopleService.getPerson($transition$.params().personId);
+                    }
+                }
+            }
+        </script>
+        <style>.active { color: red; font-weight: bold; }</style>
+    </head>
   <body ng-app="uirouterdemo">
     <a  ui-sref="home" ui-sref-active="active">home</a>
     <a  ui-sref="second" ui-sref-active="active">second</a>
     <ui-view></ui-view>
   </body>
 </html>
+
+
+
+<!-- to learn https://ui-router.github.io/ng1/tutorial/hellosolarsystem
+
+to learn if u want to know more to let u too easy to face the life and get pretty life
+
+to be a technology person that the city will welcome to you ,or the city like shenzheng will reject you with more payment of life cost;;;;;
+
+that all what i want to say to myself;;;;;;
+
+thanks!!! -->

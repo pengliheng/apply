@@ -40,7 +40,7 @@ angular.module('uirouterdemo', ['ui.router'])
 	var serviceState = {
 		name: 'service',
 		url: '/service',
-		templateUrl: 'view/second.html'
+		templateUrl: 'view/service.html'
 	}
 
 	var serviceSystemState = {
