@@ -128,7 +128,7 @@
 
 
     <div class="bt">
-        <button type="button" class="btn">提交</button>
+        <button type="button" class="btn sub-btn">提交</button>
         <button type="button" class="btn">返回首页</button>
     </div>
 

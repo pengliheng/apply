@@ -32,6 +32,8 @@ $(document).ready(function(){
         var thisfile = $(this);
         var app = document.getElementById("myBody").dataset.app;
         var dataRoot = document.getElementById("myBody").dataset.root;
+        //当上传图片时候提交按钮设置为disabled
+        $(".bt .sub-btn").attr("disabled",true);
         $.ajax({
             url:app,
             type:'post',
@@ -52,14 +54,11 @@ $(document).ready(function(){
                     $(".first-one").removeClass("upload-hide");
                     $(".first-one").parent().addClass("margin_top");
                 })
+                //当上传图片时候提交按钮设置为disabled
+                $(".bt .sub-btn").attr("disabled",false);
             }
         });
     });
-
-    // $(".textarea-max").focus(function(){
-
-    //     $(this).val($(".textarea-max").val().substr(15,$(".textarea-max").val().length));
-    // })
 
     $(".textarea-max").keyup(function(){
         var hasnumber = $(this).val().length;
@@ -71,7 +70,40 @@ $(document).ready(function(){
         }
     })
 
+    $("#phone").blur(function(){
+        if( $(this).val().length != 11){
+            $(this).val("");
+            $(this).attr("placeholder","请输入正确的手机号码！！！！！！");
+            $(this).focus();
+        }
+        var beginNum = $(this).val().substring(0,2);
+        if( beginNum!=13 && beginNum!=15 && beginNum!=17 && beginNum!=18 ){
+            $(this).val("");
+            $(this).focus();
+        }
+    })
+
     $(".bt button").click(function(){
+        //必须填写名字
+        if ($("#name").val()== "") {
+            $("#name").focus();
+            return
+        }
+        //必须填写电话号码
+        if ($("#phone").val()== "") {
+            $("#phone").focus();
+            return
+        }
+        //必须上传至少一张图片
+        if ($("#form1 img").attr('src') == "") {
+            alert("至少上传一张图片！");
+            return
+        }
+        //必须上传至少一张图片
+        if ($(".messages textarea").val() == "") {
+            $(".messages textarea").focus();
+            return
+        }
         var imgId; 
         var imgMsg = {}; 
         for (var i = 1; i <= 8; i++) {
@@ -80,22 +112,23 @@ $(document).ready(function(){
             if(imgSrc == undefined){
                 break;
             }
-            imgMsg[i] = imgSrc;
+            imgMsg["form"+i] = imgSrc;
         };
         var msg = {
-            'name':$("#name").val(),
-            'phone':$("#phone").val(),
+            "name":$("#name").val(),
+            "phone":$("#phone").val(),
             "imgMsg":imgMsg,
             "context":$(".textarea-max").val().substr(15,$(".textarea-max").val().length)
         };
+        var json_msg = JSON.stringify(msg); 
         $.ajax({
             url:"/new_vote/Home/Index/upload",
             type:'post',
-            data:msg,
+            data:json_msg,
             contentType: false,
             processData: false,
             success:function(res){
-
+                //location.reload();
             }
         });
     })
