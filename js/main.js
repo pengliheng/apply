@@ -16,10 +16,10 @@
 //     $('ul.nav li .title').removeClass("on"); 
 //     $(this).siblings(".title").addClass("on");
 // })
-$(".context-mod").click(function(){
-    $('ul.nav li').removeClass("on"); 
-    $(this).addClass("on"); 
-})
+// $(".context-mod").click(function(){
+//     $('ul.nav li').removeClass("on"); 
+//     $(this).addClass("on"); 
+// })
 
 
 //angualr-ui-route 路由设置
@@ -28,90 +28,42 @@ angular.module('uirouterdemo', [
 		'me-pageloading'
 	])
 .config(['$stateProvider', '$urlRouterProvider', 'mePageLoadingProvider', function($stateProvider, $urlRouterProvider, mePageLoadingProvider) {
-	var homeState = {
+	$stateProvider
+	.state('index',{
+		name: 'index',
+		url: '',
+		templateUrl: 'view/home.html',
+		//controller: 'home',
+		resolve: {
+		    data: ['$q', function($q){
+		        var defer = $q.defer();
+		        setTimeout(function(){
+		            defer.resolve('index');
+		        }, 500);
+		        return defer.promise;
+		    }]
+		}
+	})
+	.state('home',{
 		name: 'home',
 		url: '/home',
-		templateUrl: 'view/home.html'
-	}
-
-	var aboutState = {
-		name: 'about',
-		url: '/about',
-		templateUrl: 'view/second.html'
-	}
-
-	var serviceState = {
-		name: 'service',
-		url: '/service',
-		templateUrl: 'view/service.html'
-	}
-
-	var serviceSystemState = {
-		name: 'serviceSystem',
-		url: '/serviceSystem',
-		templateUrl: 'view/second.html'
-	}
-
-	var caseState = {
-		name: 'case',
-		url: '/case',
-		templateUrl: 'view/second.html'
-	}
-
-	var contactState = {
-		name: 'contact',
-		url: '/contact',
-		templateUrl: 'view/second.html'
-	}
-
-	var brandState = {
-		name: 'brand',
-		url: '/brand',
-		templateUrl: 'view/third.html'
-	}
-
-
-	var logoState = {
-		name: 'logo',
-		url: '/logo',
-		templateUrl: 'view/third.html'
-	}
-
-	var brochureState = {
-		name: 'brochure',
-		url: '/brochure',
-		templateUrl: 'view/third.html'
-	}
-
-	var packageState = {
-		name: 'package',
-		url: '/package',
-		templateUrl: 'view/third.html'
-	}
-
-	// $stateProvider
-	// .state('home',{
-	// 	name: 'home',
-	// 	url: '',
-	// 	templateUrl: 'view/home.html',
-	// 	controller: 'home',
-	// 	resolve: {
-	// 	    data: ['$q', function($q){
-	// 	        var defer = $q.defer();
-	// 	        setTimeout(function(){
-	// 	            defer.resolve('home');
-	// 	        }, 500);
-	// 	        return defer.promise;
-	// 	    }]
-	// 	}
-	// });
-
-	$stateProvider
+		templateUrl: 'view/home.html',
+		//controller: 'home',
+		resolve: {
+		    data: ['$q', function($q){
+		        var defer = $q.defer();
+		        setTimeout(function(){
+		            defer.resolve('home');
+		        }, 500);
+		        return defer.promise;
+		    }]
+		}
+	})
 	.state('about',{
 		name: 'about',
-		url: '',
+		url: '/about',
 		templateUrl: 'view/second.html',
-		controller: 'about',
+		//controller: 'about',
 		resolve: {
 		    data: ['$q', function($q){
 		        var defer = $q.defer();
@@ -121,14 +73,12 @@ angular.module('uirouterdemo', [
 		        return defer.promise;
 		    }]
 		}
-	});
-
-	$stateProvider
+	})
 	.state('service',{
 		name: 'service',
-		url: '',
+		url: '/service',
 		templateUrl: 'view/service.html',
-		controller: 'service',
+		//controller: 'service',
 		resolve: {
 		    data: ['$q', function($q){
 		        var defer = $q.defer();
@@ -138,41 +88,114 @@ angular.module('uirouterdemo', [
 		        return defer.promise;
 		    }]
 		}
+	})
+	.state('serviceSystem',{
+		name: 'serviceSystem',
+		url: '/serviceSystem',
+		templateUrl: 'view/second.html',
+		//controller: 'serviceSystem',
+		resolve: {
+		    data: ['$q', function($q){
+		        var defer = $q.defer();
+		        setTimeout(function(){
+		            defer.resolve('serviceSystem');
+		        }, 500);
+		        return defer.promise;
+		    }]
+		}
+	})
+	.state('case',{
+		name: 'case',
+		url: '/case',
+		templateUrl: 'view/second.html',
+		//controller: 'case',
+		resolve: {
+		    data: ['$q', function($q){
+		        var defer = $q.defer();
+		        setTimeout(function(){
+		            defer.resolve('case');
+		        }, 500);
+		        return defer.promise;
+		    }]
+		}
+	})
+	.state('contact',{
+		name: 'contact',
+		url: '/contact',
+		templateUrl: 'view/second.html',
+		//controller: 'contact',
+		resolve: {
+		    data: ['$q', function($q){
+		        var defer = $q.defer();
+		        setTimeout(function(){
+		            defer.resolve('contact');
+		        }, 500);
+		        return defer.promise;
+		    }]
+		}
+	})
+	.state('brand',{
+		name: 'brand',
+		url: '/brand',
+		templateUrl: 'view/third.html',
+		//controller: 'brand',
+		resolve: {
+		    data: ['$q', function($q){
+		        var defer = $q.defer();
+		        setTimeout(function(){
+		            defer.resolve('brand');
+		        }, 500);
+		        return defer.promise;
+		    }]
+		}
+	})
+	.state('logo',{
+		name: 'logo',
+		url: '/logo',
+		templateUrl: 'view/third.html',
+		//controller: 'logo',
+		resolve: {
+		    data: ['$q', function($q){
+		        var defer = $q.defer();
+		        setTimeout(function(){
+		            defer.resolve('logo');
+		        }, 500);
+		        return defer.promise;
+		    }]
+		}
+	})
+	.state('brochure',{
+		name: 'brochure',
+		url: '/brochure',
+		templateUrl: 'view/third.html',
+		//controller: 'brochure',
+		resolve: {
+		    data: ['$q', function($q){
+		        var defer = $q.defer();
+		        setTimeout(function(){
+		            defer.resolve('brochure');
+		        }, 500);
+		        return defer.promise;
+		    }]
+		}
+	})
+	.state('package',{
+		name: 'package',
+		url: '/package',
+		templateUrl: 'view/third.html',
+		//controller: 'package',
+		resolve: {
+		    data: ['$q', function($q){
+		        var defer = $q.defer();
+		        setTimeout(function(){
+		            defer.resolve('package');
+		        }, 500);
+		        return defer.promise;
+		    }]
+		}
 	});
-	
-	$stateProvider
-	.state(homeState);
-	
-	// $stateProvider
-	// .state(aboutState);
-	
-	// $stateProvider
-	// .state(serviceState);
-	
-	$stateProvider
-	.state(serviceSystemState);
-	
-	$stateProvider
-	.state(caseState);
-	
-	$stateProvider
-	.state(contactState);
-	
-	$stateProvider
-	.state(brandState);
-	
-	$stateProvider
-	.state(logoState);
-	
-	$stateProvider
-	.state(brochureState);
-	
-	$stateProvider
-	.state(packageState);
+	$urlRouterProvider.otherwise('/home');
 }])
-
-
-
 
 
 
