@@ -17,4 +17,9 @@ class PictureModel extends Model
     {
         return $this->data(array('path' => $path))->add();
     }
+
+    public function getPicture($id)
+    {
+        return $this->field('path')->find($id);
+    }
 }

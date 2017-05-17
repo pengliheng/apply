@@ -105,25 +105,27 @@ $(document).ready(function(){
             return
         }
         var imgId; 
-        var imgMsg = {}; 
+        var imgMsg= ""; 
         for (var i = 1; i <= 8; i++) {
             imgid = "#form"+i+" img";
             var imgSrc = $(imgid).attr("id");
             if(imgSrc == undefined){
                 break;
             }
-            imgMsg["form"+i] = imgSrc;
+            imgMsg += imgSrc+",";
         };
+        imgMsg = imgMsg.substring(0,imgMsg.length--)
         var msg = {
             "name":$("#name").val(),
             "phone":$("#phone").val(),
-            "imgMsg":imgMsg,
-            "context":$(".textarea-max").val().substr(15,$(".textarea-max").val().length)
+            "picture_id":imgMsg,
+            "context":$(".textarea-max").val()
         };
         var json_msg = JSON.stringify(msg); 
+        var sub = document.getElementById("myBody").dataset.sub;
         $.ajax({
-            url:"/new_vote/Home/Index/upload",
-            type:'post',
+            url:sub,
+            type:'get',
             data:json_msg,
             contentType: false,
             processData: false,

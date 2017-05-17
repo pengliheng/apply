@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animate</title>
+<script src="lib/angular/angular.js"></script>
+<!-- <script src="lib/angular-animate/angular-animate.js"></script> -->
+<style>
+	.view {
+		opacity: 1;
+	}
+
+	/*//the animation*/
+	.view-active{
+		transition: opacity 1s;
+		opacity: 1;
+	}
+
+	.hide {
+	    opacity: 0;
+	}
+	.hide-active {
+	    transition: opacity 1s;
+	    opacity: 0;
+	}
+</style>
+</head>
+<body>
+	<div ng-app="myApp" class="myHideExample" ng-controller="example">
+		<button class="button" ng-click="awesome = !awesome">Toggle awesomeness</button>
+		<div class="message">
+			<p my-hide="awesome">Hide this text if awesome</p>
+		</div>
+	</div>
+	<script>
+		//to init an application
+		var app = angular.module('myApp',[])
+		app.controller("example", function($scope){
+			$scope.awesome = false;
+		});
+
+		//myHide指令关注着一个表达式的取值（本例中“awesome”），用来控制myHide元素隐藏或者不隐藏
+		app.directive("myHide", function(){
+			return {
+				restrict: 'A',
+				link: function(scope, elem, attrs){
+					scope.$watch(attrs.myHide, function(value){
+						if (value) {
+							// to view
+							elem.removeClass("hide");
+							elem.addClass("view-active");
+							setTimeout(function() {
+							    // add the hide class after animation is finished
+							    elem.addClass("view");
+							    // clean up
+							    elem.removeClass("view-active");
+							}, 300);
+						} else {
+							// to hide
+							elem.removeClass("view");
+							elem.addClass("hide-active");
+							setTimeout(function() {
+							    // add the hide class after animation is finished
+							    elem.addClass("hide");
+							    // clean up
+							    elem.removeClass("hide-active");
+							}, 300);
+						}
+					});
+
+
+				}
+			};
+		});
+
+		
+	</script>
+</body>
+</html>

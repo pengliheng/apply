@@ -19,8 +19,10 @@
 <div class="banner">
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="/new_vote/Public/images/b_1.jpg" class="img-responsive"></div>
-            <div class="swiper-slide"><img src="/new_vote/Public/images/b_1.jpg" class="img-responsive"></div>
+           <!-- <div class="swiper-slide"><img src="/new_vote/Public/images/b_1.jpg" class="img-responsive"></div>-->
+
+
+            <?php if(is_array($act["pictures"])): $i = 0; $__LIST__ = $act["pictures"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$pictures): $mod = ($i % 2 );++$i;?><div class="swiper-slide"><img src="/new_vote<?php echo ($pictures); ?>" class="img-responsive"></div><?php endforeach; endif; else: echo "" ;endif; ?>
         </div>
     </div>
 </div>
@@ -46,7 +48,8 @@
         </div>
     </div>
     <div class="active_time">
-        <span>活动时间：2017年1月1日-2017年1月1日</span>
+        <span>活动时间：<?php echo ($act["apply_start_time"]); ?>-<?php echo ($act["apply_end_time"]); ?></span><br>
+        <span>投票时间：<?php echo ($act["act_start_time"]); ?>-<?php echo ($act["act_end_time"]); ?></span>
     </div>
     <div class="grid_match">
         <ol class="breadcrumb">
@@ -59,7 +62,7 @@
         <div class="row">
             <div class="col-xs-6">
                 <div class="thumbnail">
-                    <a href="<?php echo U('Index/player');?>"><img src="/new_vote/Public/images/p_1.jpg"></a>
+                    <a href="<?php echo U('Index/player?id='.$act[id]);?>"><img src="/new_vote/Public/images/p_1.jpg"></a>
                     <div class="caption">
                         <p>陈天华</p>
                         <p>132票</p>
@@ -73,7 +76,7 @@
             </div>
             <div class="col-xs-6">
                 <div class="thumbnail">
-                    <a href="<?php echo U('Index/player');?>"><img src="/new_vote/Public/images/p_1.jpg"></a>
+                    <a href="<?php echo U('Index/player?id='.$act[id]);?>"><img src="/new_vote/Public/images/p_1.jpg"></a>
                     <div class="caption">
                         <p>陈天华</p>
                         <p>132票</p>
@@ -87,7 +90,7 @@
             </div>
             <div class="col-xs-6">
                 <div class="thumbnail">
-                    <a href="<?php echo U('Index/player');?>"><img src="/new_vote/Public/images/p_1.jpg"></a>
+                    <a href="<?php echo U('Index/player?id='.$act[id]);?>"><img src="/new_vote/Public/images/p_1.jpg"></a>
                     <div class="caption">
                         <p>陈天华</p>
                         <p>132票</p>
@@ -101,7 +104,7 @@
             </div>
             <div class="col-xs-6">
                 <div class="thumbnail">
-                    <a href="<?php echo U('Index/player');?>"><img src="/new_vote/Public/images/p_1.jpg"></a>
+                    <a href="<?php echo U('Index/player?id='.$act[id]);?>"><img src="/new_vote/Public/images/p_1.jpg"></a>
                     <div class="caption">
                         <p>陈天华</p>
                         <p>132票</p>
@@ -119,14 +122,14 @@
 <div class="footer text-center">
     <div class="row">
         <div class="col-xs-3 list-item">
-            <a href="<?php echo U('Index/index');?>" class="color">
+            <a href="<?php echo U('Index/index?id='.$act[id]);?>" class="color">
                     <span class="iconfont icon-home ">
          </span>
                 <p>首页</p>
             </a>
         </div>
         <div class="col-xs-3  list-item">
-            <a href="<?php echo U('Index/apply');?>">
+            <a href="<?php echo U('Index/apply?id='.$act[id]);?>">
                     <span class="iconfont icon-apply">
 
          </span>
@@ -134,7 +137,7 @@
             </a>
         </div>
         <div class="col-xs-3  list-item">
-            <a href="<?php echo U('Index/line');?>">
+            <a href="<?php echo U('Index/line?id='.$act[id]);?>">
                       <span class="iconfont icon-line">
 
          </span>
@@ -142,7 +145,7 @@
             </a>
         </div>
         <div class="col-xs-3  list-item">
-            <a href="<?php echo U('Index/explain');?>">
+            <a href="<?php echo U('Index/explain?id='.$act[id]);?>">
                      <span class="iconfont icon-explain">
 
          </span>

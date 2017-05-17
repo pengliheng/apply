@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>投票</title>
+</head>
+<body>
+<volist name="act" id="act">
+    {$act.name}<br><a href="{:U('Index/index?id='.$act[id])}"><img src="__ROOT__{$act.path}" style="width:300px"></a><br><br>
+</volist>
+</body>
+</html>

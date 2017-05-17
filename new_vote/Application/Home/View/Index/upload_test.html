@@ -5,13 +5,12 @@
     <title>Title</title>
     <script src="__PUBLIC__/js/libs/jquery.min.js"></script>
 </head>
-<body data-app="__APP__/Home/Index/upload">
+<body>
 <script>
     $(document).ready(function () {
         $('form').change(function () {
             var form = '#' + $(this).attr("id");
             var photo = new FormData($(form)[0]);
-            thisfile = $(this) ; 
             $.ajax({
                 url: '__APP__/Home/Index/upload',
                 type: 'post',
@@ -19,12 +18,10 @@
                 contentType: false,
                 processData: false,
                 success: function (res) {
-                    console.log(res.status);
-                    console.log(res.info);
-                    console.log(res.picId);
-                    console.log(res.path);
-                    console.log('__ROOT__' + res.path);
-                    thisfile.find("img").attr("src",'__ROOT__' + res.path);
+                    alert(res.status);
+                    alert(res.info);
+                    alert(res.picId);
+                    alert('__ROOT__' + res.path);
                 }
             });
         });
@@ -33,36 +30,31 @@
 
 <form id="form1">
     <input type="file" name="photo">
-    <img src="" alt="">
 </form>
 <form id="form2">
     <input type="file" name="photo">
-    <img src="" alt="">
 </form>
 <form id="form3">
     <input type="file" name="photo">
-    <img src="" alt="">
 </form>
 <form id="form4">
     <input type="file" name="photo">
-    <img src="" alt="">
 </form>
 <form id="form5">
     <input type="file" name="photo">
-    <img src="" alt="">
 </form>
 <form id="form6">
     <input type="file" name="photo">
-    <img src="" alt="">
 </form>
 <form id="form7">
     <input type="file" name="photo">
-    <img src="" alt="">
 </form>
 <form id="form8">
     <input type="file" name="photo">
-    <img src="" alt="">
 </form>
+
+
+
 
 </body>
 </html>

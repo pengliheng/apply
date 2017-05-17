@@ -19,8 +19,12 @@
 <div class="banner">
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="__PUBLIC__/images/b_1.jpg" class="img-responsive"></div>
-            <div class="swiper-slide"><img src="__PUBLIC__/images/b_1.jpg" class="img-responsive"></div>
+           <!-- <div class="swiper-slide"><img src="__PUBLIC__/images/b_1.jpg" class="img-responsive"></div>-->
+
+
+            <volist name="act.pictures" id="pictures">
+                <div class="swiper-slide"><img src="__ROOT__{$pictures}" class="img-responsive"></div>
+            </volist>
         </div>
     </div>
 </div>
@@ -46,7 +50,8 @@
         </div>
     </div>
     <div class="active_time">
-        <span>活动时间：2017年1月1日-2017年1月1日</span>
+        <span>活动时间：{$act.apply_start_time}-{$act.apply_end_time}</span><br>
+        <span>投票时间：{$act.act_start_time}-{$act.act_end_time}</span>
     </div>
     <div class="grid_match">
         <ol class="breadcrumb">
@@ -59,7 +64,7 @@
         <div class="row">
             <div class="col-xs-6">
                 <div class="thumbnail">
-                    <a href="{:U('Index/player')}"><img src="__PUBLIC__/images/p_1.jpg"></a>
+                    <a href="{:U('Index/player?id='.$act[id])}"><img src="__PUBLIC__/images/p_1.jpg"></a>
                     <div class="caption">
                         <p>陈天华</p>
                         <p>132票</p>
@@ -73,7 +78,7 @@
             </div>
             <div class="col-xs-6">
                 <div class="thumbnail">
-                    <a href="{:U('Index/player')}"><img src="__PUBLIC__/images/p_1.jpg"></a>
+                    <a href="{:U('Index/player?id='.$act[id])}"><img src="__PUBLIC__/images/p_1.jpg"></a>
                     <div class="caption">
                         <p>陈天华</p>
                         <p>132票</p>
@@ -87,7 +92,7 @@
             </div>
             <div class="col-xs-6">
                 <div class="thumbnail">
-                    <a href="{:U('Index/player')}"><img src="__PUBLIC__/images/p_1.jpg"></a>
+                    <a href="{:U('Index/player?id='.$act[id])}"><img src="__PUBLIC__/images/p_1.jpg"></a>
                     <div class="caption">
                         <p>陈天华</p>
                         <p>132票</p>
@@ -101,7 +106,7 @@
             </div>
             <div class="col-xs-6">
                 <div class="thumbnail">
-                    <a href="{:U('Index/player')}"><img src="__PUBLIC__/images/p_1.jpg"></a>
+                    <a href="{:U('Index/player?id='.$act[id])}"><img src="__PUBLIC__/images/p_1.jpg"></a>
                     <div class="caption">
                         <p>陈天华</p>
                         <p>132票</p>
@@ -119,14 +124,14 @@
 <div class="footer text-center">
     <div class="row">
         <div class="col-xs-3 list-item">
-            <a href="{:U('Index/index')}" class="color">
+            <a href="{:U('Index/index?id='.$act[id])}" class="color">
                     <span class="iconfont icon-home ">
          </span>
                 <p>首页</p>
             </a>
         </div>
         <div class="col-xs-3  list-item">
-            <a href="{:U('Index/apply')}">
+            <a href="{:U('Index/apply?id='.$act[id])}">
                     <span class="iconfont icon-apply">
 
          </span>
@@ -134,7 +139,7 @@
             </a>
         </div>
         <div class="col-xs-3  list-item">
-            <a href="{:U('Index/line')}">
+            <a href="{:U('Index/line?id='.$act[id])}">
                       <span class="iconfont icon-line">
 
          </span>
@@ -142,7 +147,7 @@
             </a>
         </div>
         <div class="col-xs-3  list-item">
-            <a href="{:U('Index/explain')}">
+            <a href="{:U('Index/explain?id='.$act[id])}">
                      <span class="iconfont icon-explain">
 
          </span>
