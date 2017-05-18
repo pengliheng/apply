@@ -14,7 +14,7 @@
     </style>
 </head>
 
-<body id="myBody" style="padding-bottom: 17%;width:95%;" data-app="/new_vote/Home/Index/upload" data-root="/new_vote">
+<body id="myBody" style="padding-bottom: 17%;width:95%;" data-app="/new_vote/Home/Index/upload" data-root="/new_vote" data-sub="/new_vote/Home/Index/submitMsg">
 
 
 <div class="apply_title">

@@ -48,14 +48,14 @@
 <div class="footer text-center">
     <div class="row">
         <div class="col-xs-3 list-item">
-            <a href="#" class="color">
+            <a href="<?php echo U('Index/index?id='.$act[id]);?>" class="color">
                     <span class="iconfont icon-home ">
          </span>
                 <p>首页</p>
             </a>
         </div>
         <div class="col-xs-3  list-item">
-            <a href="apply.html">
+            <a href="<?php echo U('Index/apply?id='.$act[id]);?>">
                     <span class="iconfont icon-apply">
       
          </span>
@@ -63,7 +63,7 @@
             </a>
         </div>
         <div class="col-xs-3  list-item">
-            <a href="line.html">
+            <a href="<?php echo U('Index/line?id='.$act[id]);?>">
                     <span class="iconfont icon-line">
       
          </span>
@@ -71,7 +71,7 @@
             </a>
         </div>
         <div class="col-xs-3  list-item">
-            <a href="explain.html">
+            <a href="<?php echo U('Index/explain?id='.$act[id]);?>">
                     <span class="iconfont icon-explain">
       
          </span>

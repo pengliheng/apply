@@ -23,11 +23,14 @@ $(".context-mod").click(function(){
 
 
 //angualr-ui-route 路由设置
-angular.module('uirouterdemo', ['ui.router'])
-.config(function($stateProvider) {
+angular.module('uirouterdemo', [
+		'ui.router',
+		'me-pageloading'
+	])
+.config(['$stateProvider', '$urlRouterProvider', 'mePageLoadingProvider', function($stateProvider, $urlRouterProvider, mePageLoadingProvider) {
 	var homeState = {
 		name: 'home',
-		url: '',
+		url: '/home',
 		templateUrl: 'view/home.html'
 	}
 
@@ -86,17 +89,88 @@ angular.module('uirouterdemo', ['ui.router'])
 		templateUrl: 'view/third.html'
 	}
 
-	$stateProvider.state(homeState);
-	$stateProvider.state(aboutState);
-	$stateProvider.state(serviceState);
-	$stateProvider.state(serviceSystemState);
-	$stateProvider.state(caseState);
-	$stateProvider.state(contactState);
-	$stateProvider.state(brandState);
-	$stateProvider.state(logoState);
-	$stateProvider.state(brochureState);
-	$stateProvider.state(packageState);
-})
+	// $stateProvider
+	// .state('home',{
+	// 	name: 'home',
+	// 	url: '',
+	// 	templateUrl: 'view/home.html',
+	// 	controller: 'home',
+	// 	resolve: {
+	// 	    data: ['$q', function($q){
+	// 	        var defer = $q.defer();
+	// 	        setTimeout(function(){
+	// 	            defer.resolve('home');
+	// 	        }, 500);
+	// 	        return defer.promise;
+	// 	    }]
+	// 	}
+	// });
+
+	$stateProvider
+	.state('about',{
+		name: 'about',
+		url: '',
+		templateUrl: 'view/second.html',
+		controller: 'about',
+		resolve: {
+		    data: ['$q', function($q){
+		        var defer = $q.defer();
+		        setTimeout(function(){
+		            defer.resolve('about');
+		        }, 500);
+		        return defer.promise;
+		    }]
+		}
+	});
+
+	$stateProvider
+	.state('service',{
+		name: 'service',
+		url: '',
+		templateUrl: 'view/service.html',
+		controller: 'service',
+		resolve: {
+		    data: ['$q', function($q){
+		        var defer = $q.defer();
+		        setTimeout(function(){
+		            defer.resolve('service');
+		        }, 500);
+		        return defer.promise;
+		    }]
+		}
+	});
+	
+	$stateProvider
+	.state(homeState);
+	
+	// $stateProvider
+	// .state(aboutState);
+	
+	// $stateProvider
+	// .state(serviceState);
+	
+	$stateProvider
+	.state(serviceSystemState);
+	
+	$stateProvider
+	.state(caseState);
+	
+	$stateProvider
+	.state(contactState);
+	
+	$stateProvider
+	.state(brandState);
+	
+	$stateProvider
+	.state(logoState);
+	
+	$stateProvider
+	.state(brochureState);
+	
+	$stateProvider
+	.state(packageState);
+}])
+
 
 
 

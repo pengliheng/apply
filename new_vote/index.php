@@ -14,6 +14,10 @@
 // 检测PHP环境
 if (version_compare(PHP_VERSION, '5.3.0', '<')) die('require PHP > 5.3.0 !');
 
+/*define('BIND_MODULE', 'Admin');
+define('BUILD_CONTROLLER_LIST', 'Index,User,Menu');
+define('BUILD_MODEL_LIST', 'Index,User');*/
+
 //关闭自动生成目录安全文件
 define('BUILD_DIR_SECURE', false);
 

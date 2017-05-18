@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>angular-ui-router</title>
+  <style>
+
+  </style>
+  <script src="lib/html5shiv/dist/html5shiv.min.js"></script>
+</head>
+<body ng-app="bookStoreApp">
+  <div ui-view>
+    <a ui-sref="home">Home</a>
+    <a ui-sref="about">About</a>
+    <a ui-sref="contacts.list">Contacts</a>
+  </div>  
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/underscore/underscore-min.js"></script>
+  <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script>
+    var bookStoreApp = angular.module('bookStoreApp', [
+      'ngRoute', 
+      'ngAnimate', 
+      'bookStoreCtrls', 
+      'bookStoreFilters',
+      'bookStoreServices', 
+      'bookStoreDirectives'
+    ]);
+
+    bookStoreApp.config(
+
+      // 路由机制
+      function($routeProvider) {
+        $routeProvider.when('/hello', {
+          templateUrl: 'tpls/hello.html',
+          controller: 'HelloCtrl'
+        }).when('/list/:bookId', {
+          templateUrl: 'tpls/bookList.html',
+          constoller: 'BookListCtrl'
+        }).otherwise({
+          redirectTo: '/hello'
+        });
+      }
+    );
+  </script>
+</body>
+</html>
+
+<!-- to learn https://ui-router.github.io/ng1/tutorial/hellosolarsystem
+
+to learn if u want to know more to let u too easy to face the life and get pretty life
+
+to be a technology person that the city will welcome to you ,or the city like shenzheng will reject you with more payment of life cost;;;;;
+
+that all what i want to say to myself;;;;;;
+
+thanks!!! -->
+
+
+
+
